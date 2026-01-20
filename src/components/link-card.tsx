@@ -32,13 +32,13 @@ export function LinkCard({ link }: LinkProps) {
   };
 
   return (
-    <Card className="flex flex-col justify-between rounded-lg border bg-card text-card-foreground shadow-lg hover:shadow-xl transition-shadow duration-300">
+    <Card className="flex flex-col justify-between rounded-lg border bg-card text-card-foreground shadow-md transition-all hover:shadow-lg hover:-translate-y-1">
       <CardHeader>
         <CardTitle className="font-headline text-xl">{link.title}</CardTitle>
         <CardDescription className="pt-2">{link.description}</CardDescription>
       </CardHeader>
       <CardFooter className="flex flex-col sm:flex-row gap-3">
-        <Button asChild className="w-full sm:w-auto flex-grow" variant="default">
+        <Button asChild className="w-full sm:w-auto flex-grow">
           <a href={link.url} target="_blank" rel="noopener noreferrer">
             <Globe className="ml-2 h-4 w-4" />
             افتح الرابط
