@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Card, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
-import { Globe, Clipboard, Check } from 'lucide-react';
+import { Card, CardFooter, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Globe, Clipboard, Check, Link as LinkIcon } from 'lucide-react';
 
 type LinkProps = {
   link: {
@@ -32,35 +32,33 @@ export function LinkCard({ link }: LinkProps) {
   };
 
   return (
-    <Card className="flex flex-col justify-between rounded-lg border bg-card text-card-foreground shadow-md transition-all hover:shadow-lg hover:-translate-y-1">
-      <CardHeader>
-        <CardTitle className="font-headline text-xl">{link.title}</CardTitle>
-        <CardDescription className="pt-2">{link.description}</CardDescription>
+    <Card className="flex flex-col overflow-hidden rounded-xl border bg-card text-card-foreground shadow-md transition-all duration-300 hover:border-primary/50 hover:shadow-xl hover:-translate-y-1">
+       <CardHeader>
+        <div className='flex flex-row items-center gap-4'>
+            <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                <LinkIcon className="h-6 w-6" />
+            </div>
+            <div className='flex-1'>
+                <CardTitle className="font-headline text-lg font-bold">{link.title}</CardTitle>
+                <CardDescription className="pt-1 text-sm">{link.description}</CardDescription>
+            </div>
+        </div>
       </CardHeader>
-      <CardFooter className="flex flex-col sm:flex-row gap-3">
-        <Button asChild className="w-full sm:w-auto flex-grow">
+      <CardFooter className="flex gap-3 bg-muted/50 p-4">
+        <Button asChild className="flex-1">
           <a href={link.url} target="_blank" rel="noopener noreferrer">
-            <Globe className="ml-2 h-4 w-4" />
+            <Globe className="ml-2" />
             افتح الرابط
           </a>
         </Button>
         <Button
           onClick={handleCopy}
-          variant="secondary"
-          className="w-full sm:w-auto flex-grow"
+          variant="outline"
+          size="icon"
+          aria-label="انسخ الرابط"
           disabled={isCopied}
         >
-          {isCopied ? (
-            <>
-              <Check className="ml-2 h-4 w-4" />
-              تم النسخ
-            </>
-          ) : (
-            <>
-              <Clipboard className="ml-2 h-4 w-4" />
-              انسخ الرابط
-            </>
-          )}
+          {isCopied ? <Check className="h-4 w-4" /> : <Clipboard className="h-4 w-4" />}
         </Button>
       </CardFooter>
     </Card>

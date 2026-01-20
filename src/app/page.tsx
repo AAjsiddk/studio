@@ -1,4 +1,5 @@
 import { LinkCard } from '@/components/link-card';
+import { ShareButton } from '@/components/share-button';
 
 const links = [
   {
@@ -30,19 +31,25 @@ const links = [
 export default function Home() {
   return (
     <main className="container relative">
-      <section className="mx-auto flex max-w-[980px] flex-col items-center gap-2 py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20">
-        <h1 className="text-center text-3xl font-bold leading-tight tracking-tighter md:text-6xl lg:leading-[1.1]">
+      <section className="mx-auto flex max-w-4xl flex-col items-center gap-4 py-8 md:py-12 md:pb-8 lg:py-16 lg:pb-12">
+        <h1 className="text-center text-3xl font-bold leading-tight tracking-tighter md:text-5xl lg:leading-[1.1]">
           Link Hub
         </h1>
-        <p className="max-w-[750px] text-center text-lg text-muted-foreground sm:text-xl">
-          جميع روابطك الهامة في مكان واحد
+        <p className="max-w-2xl text-center text-lg text-muted-foreground sm:text-xl">
+          أهلاً بك، اختر الرابط المناسب لك 👋
         </p>
+        <div className="flex items-center space-x-4 space-x-reverse">
+          <ShareButton />
+        </div>
       </section>
-      <div className="w-full max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 pb-24">
+      <div className="w-full max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 pb-16">
         {links.map((link) => (
           <LinkCard key={link.id} link={link} />
         ))}
       </div>
+      <footer className="pb-8 text-center text-sm text-muted-foreground">
+        <p>الرجاء الدعاء لكل من قائم على هذا العمل.</p>
+      </footer>
     </main>
   );
 }
