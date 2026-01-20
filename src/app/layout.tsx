@@ -28,7 +28,7 @@ export default function RootLayout({
       <body className={cn('antialiased min-h-screen bg-background font-body', cairoFont.variable)}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
