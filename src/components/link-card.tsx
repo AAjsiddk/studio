@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardFooter, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { ArrowUpRight, BookText, Clipboard, Check } from 'lucide-react';
+import { ArrowUpRight, Sparkles, Clipboard, Check } from 'lucide-react';
 
 type LinkProps = {
   link: {
@@ -36,7 +36,7 @@ export function LinkCard({ link }: LinkProps) {
        <CardHeader>
         <div className='flex flex-row items-center gap-4'>
             <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                <BookText className="h-6 w-6" />
+                <Sparkles className="h-6 w-6" />
             </div>
             <div className='flex-1'>
                 <CardTitle className="font-headline text-lg font-bold">{link.title}</CardTitle>
