@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardFooter, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { ArrowUpRight, Sparkles, Clipboard, Check } from 'lucide-react';
+import { ArrowUpRight, Link2, Clipboard, Check } from 'lucide-react';
 
 type LinkProps = {
   link: {
@@ -32,19 +32,19 @@ export function LinkCard({ link }: LinkProps) {
   };
 
   return (
-    <Card className="flex flex-col overflow-hidden rounded-xl border bg-card text-card-foreground shadow-md transition-all duration-300 hover:border-primary/50 hover:shadow-xl hover:-translate-y-1">
+    <Card className="flex flex-col overflow-hidden rounded-xl border bg-card text-card-foreground shadow-md transition-all duration-300 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/20 hover:scale-[1.02]">
        <CardHeader>
         <div className='flex flex-row items-center gap-4'>
             <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                <Sparkles className="h-6 w-6" />
+                <Link2 className="h-6 w-6" />
             </div>
             <div className='flex-1'>
-                <CardTitle className="font-headline text-lg font-bold">{link.title}</CardTitle>
+                <CardTitle className="font-bold text-lg">{link.title}</CardTitle>
                 <CardDescription className="pt-1 text-sm">{link.description}</CardDescription>
             </div>
         </div>
       </CardHeader>
-      <CardFooter className="flex gap-3 bg-muted/50 p-4">
+      <CardFooter className="flex gap-3 bg-muted/50 p-4 mt-auto">
         <Button asChild className="flex-1">
           <a href={link.url} target="_blank" rel="noopener noreferrer">
             <ArrowUpRight className="ml-2" />
@@ -58,7 +58,7 @@ export function LinkCard({ link }: LinkProps) {
           aria-label="انسخ الرابط"
           disabled={isCopied}
         >
-          {isCopied ? <Check className="h-4 w-4" /> : <Clipboard className="h-4 w-4" />}
+          {isCopied ? <Check className="h-4 w-4 text-primary" /> : <Clipboard className="h-4 w-4" />}
         </Button>
       </CardFooter>
     </Card>

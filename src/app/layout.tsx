@@ -1,15 +1,22 @@
 import type { Metadata } from 'next';
+import { Tajawal } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from '@/components/ui/toaster';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { cn } from '@/lib/utils';
-import { BookOpen } from 'lucide-react';
+import { BookMarked } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'دفتر رمضان',
   description: 'All your important links in one place.',
 };
+
+const tajawalFont = Tajawal({
+  subsets: ['arabic'],
+  weight: ['400', '700', '900'],
+  variable: '--font-body',
+});
 
 export default function RootLayout({
   children,
@@ -18,12 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ar" dir="rtl" suppressHydrationWarning>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet" />
-      </head>
-      <body className={cn('font-body antialiased min-h-screen bg-background')}>
+      <body className={cn('antialiased min-h-screen bg-background', tajawalFont.variable)}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -35,7 +37,7 @@ export default function RootLayout({
               <div className="container flex h-14 items-center">
                 <div className="mr-4 flex">
                   <a className="mr-6 flex items-center space-x-2" href="/">
-                    <BookOpen className="h-6 w-6 text-primary" />
+                    <BookMarked className="h-6 w-6 text-primary" />
                     <span className="font-bold">دفتر رمضان</span>
                   </a>
                 </div>
