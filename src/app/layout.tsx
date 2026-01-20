@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Cairo } from 'next/font/google';
+import { Tajawal } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from '@/components/ui/toaster';
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: 'All your important links in one place.',
 };
 
-const cairoFont = Cairo({
+const tajawalFont = Tajawal({
   subsets: ['arabic'],
   weight: ['400', '700', '900'],
   variable: '--font-body',
@@ -25,10 +25,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ar" dir="rtl" suppressHydrationWarning>
-      <body className={cn('antialiased min-h-screen bg-background', cairoFont.variable)}>
+      <body className={cn('antialiased min-h-screen bg-background font-body', tajawalFont.variable)}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >

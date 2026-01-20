@@ -41,10 +41,10 @@ export function LinkCard({ link }: LinkProps) {
   };
 
   return (
-    <Card className="flex flex-col overflow-hidden rounded-xl border bg-card text-card-foreground shadow-sm transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 hover:scale-[1.02]">
+    <Card className="flex flex-col overflow-hidden rounded-xl border bg-card text-card-foreground shadow-sm transition-all duration-300 hover:border-primary hover:shadow-xl hover:shadow-primary/10 hover:scale-[1.02]">
        <CardHeader>
         <div className='flex flex-row items-center gap-4'>
-            <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-primary/5 text-primary">
+            <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
                 {Icon && <Icon className="h-6 w-6" />}
             </div>
             <div className='flex-1'>
