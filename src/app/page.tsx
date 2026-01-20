@@ -7,24 +7,28 @@ const links = [
     title: 'رابط تحميل الملف',
     url: 'https://drive.google.com/file/d/1Cs63Cze5ApCqNfeWRZ_pyM_xIZoB87zC/view?usp=drivesdk',
     description: 'ملف PDF يحتوي على معلومات هامة.',
+    icon: 'FileDown',
   },
   {
     id: 2,
     title: 'رابط تحميل التطبيق',
     url: 'https://play.google.com/store/apps/details?id=com.topstack.kilonotes.pad',
     description: 'تطبيق Kilonotes لتدوين الملاحظات.',
+    icon: 'Download',
   },
   {
     id: 3,
     title: 'موقع نَجَاتُكَ بِيَدِكَ',
     url: 'https://remembrances-1.vercel.app/',
     description: 'موقع للأذكار والمواظبة على الطاعات.',
+    icon: 'BookHeart',
   },
   {
     id: 4,
     title: 'رابط بوت التواصل',
     url: 'https://t.me/Ramadan000_bot',
     description: 'بوت للتواصل عبر تيليجرام.',
+    icon: 'Send',
   },
 ];
 

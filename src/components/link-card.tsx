@@ -3,7 +3,14 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardFooter, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { ArrowUpRight, Link2, Clipboard, Check } from 'lucide-react';
+import { ArrowUpRight, Clipboard, Check, FileDown, Download, BookHeart, Send } from 'lucide-react';
+
+const iconMap = {
+  FileDown,
+  Download,
+  BookHeart,
+  Send,
+};
 
 type LinkProps = {
   link: {
@@ -11,11 +18,13 @@ type LinkProps = {
     title: string;
     url: string;
     description: string;
+    icon: keyof typeof iconMap;
   };
 };
 
 export function LinkCard({ link }: LinkProps) {
   const [isCopied, setIsCopied] = useState(false);
+  const Icon = iconMap[link.icon];
 
   const handleCopy = () => {
     navigator.clipboard.writeText(link.url).then(
@@ -32,11 +41,11 @@ export function LinkCard({ link }: LinkProps) {
   };
 
   return (
-    <Card className="flex flex-col overflow-hidden rounded-xl border bg-card text-card-foreground shadow-md transition-all duration-300 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/20 hover:scale-[1.02]">
+    <Card className="flex flex-col overflow-hidden rounded-xl border bg-card text-card-foreground shadow-sm transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 hover:scale-[1.02]">
        <CardHeader>
         <div className='flex flex-row items-center gap-4'>
-            <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                <Link2 className="h-6 w-6" />
+            <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-primary/5 text-primary">
+                {Icon && <Icon className="h-6 w-6" />}
             </div>
             <div className='flex-1'>
                 <CardTitle className="font-bold text-lg">{link.title}</CardTitle>
