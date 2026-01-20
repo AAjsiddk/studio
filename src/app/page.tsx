@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <main className="container relative">
       <section className="mx-auto flex max-w-4xl flex-col items-center gap-4 py-8 md:py-12 md:pb-8 lg:py-16 lg:pb-12">
-        <h1 className="text-center text-3xl font-bold leading-tight tracking-tighter md:text-5xl lg:leading-[1.1]">
+        <h1 className="text-center text-4xl font-bold leading-tight tracking-tighter md:text-6xl lg:leading-[1.1]">
           دفتر رمضان
         </h1>
         <p className="max-w-2xl text-center text-lg text-muted-foreground sm:text-xl">
