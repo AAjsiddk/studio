@@ -5,7 +5,7 @@ const links = [
   {
     id: 1,
     title: 'رابط تحميل الملف',
-    url: 'https://drive.google.com/file/d/1Cs63Cze5ApCqNfeWRZ_pyM_xIZoB87zC/view?usp=drivesdk',
+    url: 'https://play.google.com/store/apps/details?id=com.luminpdfapp',
     description: 'ملف PDF يحتوي على معلومات هامة.',
     icon: 'FileDown',
   },
